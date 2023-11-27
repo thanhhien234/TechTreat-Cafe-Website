@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/cafe_order_styles.css"> 
+</head>
+<body>
+    <section class="order">
+        <h1>Your Cafe Order</h1>
+        <div class="selected-item">
+            <img src="image/menu-1.png" alt="">
+            <h3>Classic Coffee Espresso</h3>
+            <div class="price">$10</div>
+            <form id="orderForm" action="bill.html" method="get">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                <input type="hidden" id="basePrice" name="basePrice" value="10">
+                <input type="submit" value="Place Order" id="placeOrderBtn">
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Get the quantity value entered by the user
+            const quantity = parseInt(document.getElementById('quantity').value);
+            
+            // Get the base price
+            const basePrice = parseFloat(document.getElementById('basePrice').value);
+
+            // Calculate the total price based on quantity and base price
+            const totalPrice = basePrice * quantity;
+
+            // Redirect to the bill page with total price and quantity as query parameters
+            window.location.href = `bill.html?total=${totalPrice}&quantity=${quantity}`;
+        });
+    </script>
+</body>
+</html>

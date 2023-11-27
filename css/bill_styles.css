@@ -1,0 +1,80 @@
+/* bill_styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.bill {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.item-details {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.item img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.quantity, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.payment-method {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#payBtn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #d3ad7f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#payBtn:hover {
+    background-color: #eb1212;
+}

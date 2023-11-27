@@ -1,0 +1,76 @@
+/* cafe_order_styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.order {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.selected-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.selected-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.selected-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #d3ad7f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #eb1212;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+    <link rel="stylesheet" href="css/bill_styles.css"> 
+</head>
+<body>
+    <section class="bill">
+        <h1>Your Bill</h1>
+        <div class="item-details">
+            <img src="image/menu-1.png" alt="Classic Coffee Espresso">
+            <h3>Classic Coffee Espresso</h3>
+            <p>Quantity: <span id="quantity">1</span></p>
+            <p>Price per unit: $<span id="price-per-unit">10</span></p>
+            <p>Total Price: $<span id="total-price">10</span></p>
+        </div>
+        <button id="payBtn">Pay Now</button>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the total price from the URL query parameter
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const totalPrice = parseFloat(urlParams.get('total'));
+
+            // Get the quantity from the URL query parameter
+            let quantity = parseInt(urlParams.get('quantity'));
+
+            // Get the base price from the URL query parameter (default to 10 if not present)
+            let basePrice = parseFloat(urlParams.get('basePrice'));
+            if (isNaN(basePrice) || basePrice < 1) {
+                basePrice = 10; // Default base price
+            }
+
+            // Calculate the price per unit based on the quantity and base price
+            const pricePerUnit = basePrice;
+            
+            // Calculate the total price based on the quantity and base price
+            const totalPriceCalculated = basePrice * quantity;
+
+            // Display the bill details
+            document.getElementById('quantity').textContent = quantity;
+            document.getElementById('price-per-unit').textContent = pricePerUnit.toFixed(2);
+            document.getElementById('total-price').textContent = totalPriceCalculated.toFixed(2);
+
+            // Pay button functionality (redirect or additional actions)
+            document.getElementById('payBtn').addEventListener('click', function() {
+                // Implement payment functionality here (e.g., redirect to payment gateway)
+                alert('Implement payment functionality here.');
+            });
+        });
+    </script>
+</body>
+</html>
