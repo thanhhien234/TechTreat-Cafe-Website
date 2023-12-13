@@ -31,30 +31,47 @@
             const itemImage = urlParams.get('image');
             const basePrice = parseFloat(totalPrice / quantity); // Calculate price per unit
     
+            // Get current time and today's date
+            const currentDate = new Date().toLocaleDateString(); // Get today's date
+            const currentTime = new Date().toLocaleTimeString(); // Get current time
+    
+            const startTime = currentDate + ' ' + currentTime; // Combine date and time
+    
+            const endTime = new Date(new Date(startTime).getTime() + quantity * 60 * 60 * 1000).toLocaleString(); // Calculate end time by adding quantity in hours
+    
             document.getElementById('menuImage').src = 'image/' + itemImage;
             document.getElementById('menuName').textContent = itemName;
     
             const detailsDiv = document.getElementById('detailsPrintout');
-    
+            
             const quantityPara = document.createElement('p');
-            quantityPara.textContent = 'Quantity: ' + quantity;
+            quantityPara.textContent = 'Number of hours: ' + quantity;
             detailsDiv.appendChild(quantityPara);
+
+            const startTimePara = document.createElement('p');
+            startTimePara.textContent = 'Start Time: ' + startTime;
+            detailsDiv.appendChild(startTimePara);
     
+            const endTimePara = document.createElement('p');
+            endTimePara.textContent = 'End Time: ' + endTime;
+            detailsDiv.appendChild(endTimePara);
+    
+
             const pricePerUnitPara = document.createElement('p');
-            pricePerUnitPara.textContent = 'Price: ' + basePrice + 'W'
+            pricePerUnitPara.textContent = 'Price: ' + basePrice + 'W';
             detailsDiv.appendChild(pricePerUnitPara);
     
             const totalPricePara = document.createElement('p');
-            totalPricePara.textContent = 'Total Price: ' + totalPrice+ 'W'
+            totalPricePara.textContent = 'Total Price: ' + totalPrice + 'W';
             detailsDiv.appendChild(totalPricePara);
     
             document.getElementById('payBtn').addEventListener('click', function() {
                 if (confirm('Are you sure you want to proceed with the payment?')) {
-                    alert('Payment successful. Your order number is 102');
+                    alert('Payment successful. You can start your game now');
                     window.location.href = 'home.html'; // Redirect to home.html after payment success
                 }
             });
         });
-    </script>
+    </script>    
 </body>
 </html>

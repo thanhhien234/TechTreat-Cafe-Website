@@ -42,7 +42,8 @@ h3 {
 }
 
 .item img {
-    width: 80px;
+    width: 200px;
+    height: 200px;
     height: auto;
     margin-right: 20px;
     border-radius: 8px;
@@ -77,4 +78,10 @@ h3 {
 
 #payBtn:hover {
     background-color: #eb1212;
+}
+#menuImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }

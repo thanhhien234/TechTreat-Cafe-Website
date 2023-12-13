@@ -14,8 +14,8 @@
             <img id="menuImage" src="" alt="">
             <h3 id="menuName"></h3>
             <div class="price" id="menuPrice"></div>
-            <form id="orderForm" action="bill.html" method="get">
-                <label for="quantity">Quantity:</label>
+            <form id="orderForm" action="gamebill.html" method="get">
+                <label for="quantity">Number of hours:</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1">
                 <input type="hidden" id="basePrice" name="basePrice">
                 <input type="hidden" id="item" name="item">
@@ -49,7 +49,7 @@
                 const image = document.getElementById('image').value;
     
                 const totalPrice = basePrice * quantity;
-                window.location.href = `bill.html?total=${totalPrice}&quantity=${quantity}&item=${item}&image=${image}`;
+                window.location.href = `gamebill.html?total=${totalPrice}&quantity=${quantity}&item=${item}&image=${image}`;
             });
         });
     </script>
