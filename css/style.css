@@ -208,6 +208,12 @@ section{
 
 /* end */
 
+/* visualization */
+.visualization {
+    text-align: center; 
+}
+/* end */
+
 /* contact */
 
 .contact .row{
