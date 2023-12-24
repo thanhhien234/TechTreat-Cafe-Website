@@ -1,6 +1,3 @@
-/* cafe_order_styles.css */
-
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -40,7 +37,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Form Styles */
 form {
     display: flex;
     justify-content: center;
